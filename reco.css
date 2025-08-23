@@ -1,0 +1,102 @@
+body {
+  font-family: Pretendard, Arial, sans-serif;
+}
+
+#setting {
+  margin-left: 285px;
+  margin-right: 285px;
+}
+
+.recent_info {
+  img {
+    width: 148px;
+    height: 38px;
+    margin-bottom: 10px;
+  }
+  display: grid; /* Grid 레이아웃 사용 */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 33px;
+  align-items: start; /* 세로 정렬 */
+}
+.card {
+  position: relative;
+  width: 260px;
+  height: 320px;
+  border-radius: 20px;
+  padding: 16px;
+  color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card .box {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: bold;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.card a {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.card img {
+  width: 228px;
+  height: 124px;
+  margin: 20px 0;
+}
+
+.card .context {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+#bus_card {
+  background: linear-gradient(
+    135deg,
+    #ff57a6d8 0%,
+    #ff7aa5 30%,
+    #ffb07a 70%,
+    #ffd37ab7 100%
+  );
+  padding-top: 14px;
+}
+
+#chatbot_card {
+  background: linear-gradient(
+    135deg,
+    #4d7ffa 0%,
+    #7aa5ff 30%,
+    #b07aff 70%,
+    #c792fb 100%
+  );
+}
+
+#chatbot_card img {
+  width: 190px;
+  height: 140px;
+  margin-left: 15px;
+}
+
+#money_card {
+  background: linear-gradient(135deg, #b3e0ff 0%, #aaffb0 70%, #d8ffd3 100%);
+}
+
+#money_card img {
+  width: 200px;
+  height: 144px;
+
+  margin-left: 15px;
+}

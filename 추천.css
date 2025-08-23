@@ -1,0 +1,153 @@
+/* ---- Layout ---- */
+.section {
+  max-width: 1160px; /* 컨테이너 폭 */
+  margin: 0 auto;
+  padding: 16px;
+  padding-top: 100px; /* 상단 여백 */
+}
+
+.section-head h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 8px 0 16px;
+}
+
+/* 그리드: 위 1장(전체폭) + 아래 3장 */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* 데스크탑에서 3열 */
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card--large {
+    grid-column: 1 / -1; /* 큰 카드는 전체 열 차지 */
+  }
+}
+
+/* ---- Card base ---- */
+.card0,
+.card1 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  background: #000; /* 이미지 로딩 전 배경 */
+  color: #fff;
+  isolation: isolate; /* overlay, 내용 레이어 분리 */
+}
+
+/* 이미지 꽉 채우기 */
+.card0 img,
+.card1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 공통 오버레이 */
+.card0 .overlay,
+.card1 .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.15) 55%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+  z-index: 1;
+}
+
+/* 좋아요(하트) */
+.heart {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #ff2d55;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+.heart:hover {
+  transform: scale(1.06);
+}
+.heart.is-liked {
+  background: #ff2d55;
+  color: #fff;
+}
+
+/* 카드 내부 텍스트 래퍼 */
+.content {
+  position: absolute;
+  inset: auto 16px 16px 16px;
+  z-index: 2;
+}
+
+/* ---- Large card ---- */
+.card--large {
+  aspect-ratio: 16 / 6; /* 가로로 넓은 비율 */
+  min-height: 220px; /* 너무 납작해지지 않게 */
+}
+.card--large .meta {
+  opacity: 0.9;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.card--large .title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+.card--large .btn {
+  margin-top: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  cursor: pointer;
+}
+
+/* ---- Small cards ---- */
+.card--small {
+  aspect-ratio: 4 / 3;
+}
+.card--small .overlay {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+.card--small .content {
+  inset: auto 12px 12px 12px;
+}
+.card--small .title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* 살짝 인터랙션 */
+.card:hover img,
+.card1:hover img {
+  transform: scale(1.02);
+  transition: transform 0.35s ease;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>추천</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="reco.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="search.css" />
+    <link rel="stylesheet" href="추천.css" />
+    <link rel="stylesheet" href="local_reco.css" />
+    <link rel="stylesheet" href="shorts.css" />
+  </head>
+
+  <body id="setting">
+    <header class="location-top">
+      <nav class="wrap nav">
+        <a class="logo" href="/logo.png">로고</a>
+
+        <!-- 메뉴 리스트 -->
+        <ul class="menu">
+          <li><a href="/" aria-current="page">홈</a></li>
+          <li><a href="/reco.html">추천</a></li>
+          <li><a href="/논재.html">문화생활</a></li>
+          <li><a href="/community.html">소통</a></li>
+          <li><a href="/notice.html">공지사항</a></li>
+          <li><a href="/mypage.html">마이페이지</a></li>
+        </ul>
+        <!-- 로그인/회원가입 버튼 -->
+        <div class="auth">
+          <a class="btn" href="/login.html">로그인</a>
+          <a class="btn" href="/signup.html">회원가입</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="searchline">
+      <!-- 지역 -->
+      <select
+        class="region-select"
+        style="background: #30353b; color: #fff; border: 1px solid #333"
+      >
+        <option value="지역">지역 ▾</option>
+        <option value="서울">서울</option>
+        <option value="경기">경기</option>
+        <option value="인천">인천</option>
+        <option value="대전">대전</option>
+        <option value="대구">대구</option>
+        <option value="부산">부산</option>
+        <option value="광주">광주</option>
+        <option value="울산">울산</option>
+      </select>
+
+      <!-- 카테고리 + 검색어(둥근 테두리 하나로 묶음) -->
+      <div class="searchbox">
+        <select class="category-select">
+          <option value="전체">문화생활 ▾</option>
+          <option value="미술관">미술관</option>
+          <option value="박물관">박물관</option>
+          <option value="공연">공연</option>
+          <option value="영화">영화</option>
+          <option value="전시">전시</option>
+          <option value="축제">축제</option>
+          <option value="기타">기타</option>
+        </select>
+        <input id="search" type="text" placeholder="검색어를 입력하세요" />
+      </div>
+
+      <!-- 전송 -->
+      <button id="search-button" class="go" aria-label="검색">➔</button>
+    </div>
+  </body>
+</html>

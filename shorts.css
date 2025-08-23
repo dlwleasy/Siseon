@@ -1,0 +1,93 @@
+/* 전체 래퍼(라운드 카드 영역) */
+.shorts {
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px 18px;
+  background: #f5f6f8;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shorts h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 14px;
+}
+
+/* 가로 스크롤 행 */
+.shorts-row {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  padding: 2px 8px 18px; /* 아래 여백으로 그림자 안잘리게 */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 개별 카드 */
+.short {
+  flex: 0 0 260px; /* 카드 폭 */
+  scroll-snap-align: start;
+  color: #111;
+}
+
+/* 영상(세로 9:16) */
+.short iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16; /* 쇼츠 비율 */
+  border: 0;
+  border-radius: 18px;
+  display: block;
+  background: #e6e7ea; /* 썸네일 로딩 전 배경 */
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.short:hover iframe {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+}
+
+/* (선택) 제목/메타: HTML에 넣어두면 스타일 적용됨 */
+.short .title {
+  margin: 10px 2px 6px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+}
+.short .meta {
+  margin: 0 2px;
+  font-size: 12px;
+  color: #757980;
+}
+
+/* 우측 원형 화살표(장식용) */
+.shorts::after {
+  content: "›";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: #111;
+  pointer-events: none; /* 클릭 방해 X */
+}
+
+/* 작은 화면에서 카드 폭 축소 */
+@media (max-width: 600px) {
+  .short {
+    flex-basis: 200px;
+  }
+  .short iframe {
+    border-radius: 14px;
+  }
+}

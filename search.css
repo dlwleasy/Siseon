@@ -1,0 +1,93 @@
+:root {
+  --ink: #111114;
+  --muted: #757980;
+  --line: #eceef2;
+}
+
+/* 라인 전체 */
+.searchline {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* 공통 select 리셋 */
+.searchline select {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+
+  border: 0;
+  outline: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* 왼쪽: 지역) */
+.region-select {
+  color: var(--ink);
+  background: #111114;
+  padding: 12px 30px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+}
+
+/* 가운데: 둥근 테두리 박스 안에 카테고리 셀렉트 + 입력 */
+.searchbox {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 10px;
+  background: #fafbfc;
+}
+.category-select {
+  color: var(--muted);
+  padding: 6px 26px 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="%23757980"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+#search {
+  flex: 1 1 auto;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  padding: 6px 8px;
+  color: var(--ink);
+}
+
+/* 오른쪽: 동그란 검은 버튼 */
+.go {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  background: #111114;
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+/* 작은 화면에서 살짝 압축 */
+@media (max-width: 640px) {
+  .region-select {
+    padding: 8px 32px 8px 32px;
+  }
+  .searchbox {
+    padding: 6px 8px;
+  }
+  .go {
+    width: 28px;
+    height: 28px;
+  }
+}

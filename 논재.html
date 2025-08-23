@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>모임 – 홈</title>
+
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <header class="top">
+      <div class="wrap nav">
+        <div class="logo">모임</div>
+        <ul>
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">문화생활</a></li>
+          <li><a href="#" class="active">모임</a></li>
+          <li><a href="#">소통</a></li>
+          <li><a href="#">내 일정</a></li>
+          <li><a href="#">문화얻기</a></li>
+        </ul>
+        <span class="app-pill">앱 설치</span>
+      </div>
+    </header>
+
+    <!-- Search + chips like 디자인 -->
+    <div class="searchbar">
+      <div class="wrap">
+        <div class="row">
+          <div class="select">영남 ▾</div>
+          <div class="search">
+            <input type="text" placeholder="문화생활 검색" aria-label="검색" />
+            <button class="go" aria-label="검색">➔</button>
+          </div>
+        </div>
+        <div class="chips-row">
+          <div class="chips">
+            <span class="chip">미술관</span>
+            <span class="chip">미술관</span>
+            <span class="chip">미술관</span>
+            <span class="chip">미술관</span>
+            <span class="chip">미술관</span>
+            <span class="chip">미술관</span>
+            <span class="chip">미술관</span>
+            <span class="chip">미술관</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="wrap">
+      <!-- Interests -->
+      <section class="section">
+        <h2>어떤 분야에 관심 있으신가요?</h2>
+        <!-- 2 x 4, 두 줄 구성 -->
+        <div class="interest-grid" aria-label="관심사 선택">
+          <!-- 위 줄 -->
+          <button class="interest is-selected" aria-pressed="true">
+            <img src="./assets/icon-museum.svg" alt="박물관 아이콘" />
+            <span>박물관</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-book.svg" alt="독서 아이콘" /><span
+              >독서</span
+            >
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-festival.svg" alt="신나는 아이콘" /><span
+              >신나는</span
+            >
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-fitness.svg" alt="운동 아이콘" /><span
+              >운동</span
+            >
+          </button>
+          <!-- 아래 줄 -->
+          <button class="interest">
+            <img src="./assets/icon-gallery.svg" alt="미술관 아이콘" /><span
+              >미술관</span
+            >
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-movie.svg" alt="영화 아이콘" /><span
+              >영화</span
+            >
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-gallery.svg" alt="미술관 아이콘" /><span
+              >미술관</span
+            >
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-movie.svg" alt="영화 아이콘" /><span
+              >영화</span
+            >
+          </button>
+        </div>
+      </section>
+
+      <!-- Nearby events grid -->
+      <section class="section">
+        <div class="row-between">
+          <h2>내 주변 문화생활</h2>
+          <a class="link" href="#">자세히 보기 ›</a>
+        </div>
+        <div class="grid">
+          <!-- 동일 이미지 6장 (사용자 제공 이미지로 교체) -->
+          <!-- 👉 VS Code에서 /assets/event-museum.png 로 저장 후 사용하세요 -->
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+        </div>
+        <div class="dots" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="dot is-active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+
+      <!-- Popular (회색 카드 유지) -->
+      <section class="section">
+        <div class="row-between">
+          <h2>인기 모임</h2>
+          <a class="link" href="#">자세히 보기 ›</a>
+        </div>
+        <div class="popular">
+          <article class="pop-card">
+            <div class="pop-title">강원도 기차 여행 모임</div>
+            <div class="muted">
+              강원도 기차 여행으로 함께 여행<br />창문으로 바다면서 여행할 수
+              있어요
+            </div>
+          </article>
+          <article class="pop-card">
+            <div class="pop-title">강원도 기차 여행 모임</div>
+            <div class="muted">
+              강원도 기차 여행으로 함께 여행<br />창문으로 바다면서 여행할 수
+              있어요
+            </div>
+          </article>
+          <article class="pop-card">
+            <div class="pop-title">강원도 기차 여행 모임</div>
+            <div class="muted">
+              강원도 기차 여행으로 함께 여행<br />창문으로 바다면서 여행할 수
+              있어요
+            </div>
+          </article>
+          <article class="pop-card">
+            <div class="pop-title">강원도 기차 여행 모임</div>
+            <div class="muted">
+              강원도 기차 여행으로 함께 여행<br />창문으로 바다면서 여행할 수
+              있어요
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <h3>마음에 드는 모임이 없나요?</h3>
+        <p class="muted">나에게 맞는 매칭 하기 버튼을 눌러보세요!</p>
+        <a href="#" class="btn">매칭 하기</a>
+      </section>
+    </main>
+
+    <!-- 우측 헬퍼 아이콘 (필요 시 helper.png 배치) -->
+    <div class="helper" title="궁금한 점은 저를 불러주세요!"></div>
+  </body>
+</html>

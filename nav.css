@@ -1,0 +1,76 @@
+:root {
+  --card: #fff;
+  --ink: #111114;
+  --muted: #6b7280;
+  --line: #eceef2;
+}
+* {
+  box-sizing: border-box;
+}
+/*헤더 스타일*/
+.wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.location-top {
+  background: white;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* 3열: 로고 | 메뉴 | 우측버튼 */
+.nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  height: 64px;
+}
+
+/* 공통 링크 스타일(로고 제외) */
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+.logo {
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.2px;
+}
+
+/* 메뉴 */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.menu a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom: 2px solid currentColor; /* 활성 표시 */
+  padding-bottom: 2px;
+}
+
+/* 우측 로그인/회원가입 */
+.auth {
+  display: flex;
+  gap: 10px;
+  justify-self: end;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #f8f9fb;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 13px;
+}

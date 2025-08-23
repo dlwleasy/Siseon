@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">로고</div>
+    </header>
+
+    <main class="signup-page">
+      <section class="signup-card">
+        <!-- 좌측: 소셜 + 약관 -->
+        <aside class="left">
+          <h2 class="left-title">소셜 계정으로 간편하게 가입해보세요!</h2>
+
+          <div class="social-wrap">
+            <div class="social-caption">간편회원 가입하기</div>
+            <div class="socials">
+              <!-- 네이버 -->
+              <a
+                class="sns naver"
+                href="/oauth/naver"
+                aria-label="네이버로 가입"
+              >
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="12" fill="#03C75A"></circle>
+                  <path
+                    d="M8 7h3.2l2.9 4.2V7H16v10h-3.2L9.9 12.8V17H8V7z"
+                    fill="#fff"
+                  />
+                </svg>
+              </a>
+              <!-- 카카오 -->
+              <a
+                class="sns kakao"
+                href="/oauth/kakao"
+                aria-label="카카오로 가입"
+              >
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="12" fill="#FEE500"></circle>
+                  <path
+                    d="M12 6.5c-3.3 0-6 2-6 4.6 0 1.9 1.4 3.6 3.5 4.3l-.5 2.1c-.1.4.3.7.6.5l2.6-1.7h0c3.3 0 6-2 6-4.6 0-2.6-2.7-4.6-6-4.6z"
+                    fill="#1F1F1F"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <p class="left-desc">
+            필수 항목 동의 및 일부 정보(이름/성별/생년월일/이메일), 광고성 정보
+            수신(선택) 항목에 동의하실 수 있습니다.
+          </p>
+
+          <form class="agreements" id="agreeForm">
+            <label class="chk all">
+              <input type="checkbox" id="agreeAll" />
+              <span>전체 동의합니다</span>
+            </label>
+
+            <label class="chk">
+              <input type="checkbox" name="tos" data-required />
+              <span>[필수] 이용약관 동의</span>
+            </label>
+
+            <label class="chk">
+              <input type="checkbox" name="privacy" data-required />
+              <span>[필수] 개인정보 수집 및 이용 동의</span>
+            </label>
+
+            <label class="chk">
+              <input type="checkbox" name="ads" />
+              <span>[선택] 광고성 정보 수신 동의</span>
+            </label>
+          </form>
+        </aside>
+
+        <!-- 우측: 일반 가입 폼 -->
+        <section class="right">
+          <h2 class="right-title">회원 가입하고 다양한 혜택을 누리세요!</h2>
+
+          <form
+            class="signup-form"
+            id="signupForm"
+            action="/signup"
+            method="post"
+            novalidate
+          >
+            <!-- 아이디 -->
+            <div class="field">
+              <label class="label" for="userId"
+                >아이디 <small>(영문+숫자 5~20자)</small></label
+              >
+              <div class="with-btn">
+                <input
+                  id="userId"
+                  name="id"
+                  class="input"
+                  type="text"
+                  minlength="5"
+                  maxlength="20"
+                  required
+                  placeholder="아이디"
+                  autocomplete="username"
+                />
+                <button class="pill-btn" type="button" id="btnCheckId">
+                  중복확인
+                </button>
+              </div>
+            </div>
+
+            <!-- 닉네임 -->
+            <div class="field">
+              <label class="label" for="nickname">닉네임</label>
+              <div class="with-btn">
+                <input
+                  id="nickname"
+                  name="nickname"
+                  class="input"
+                  type="text"
+                  minlength="2"
+                  maxlength="20"
+                  required
+                  placeholder="닉네임"
+                />
+                <button class="pill-btn" type="button" id="btnCheckNick">
+                  중복확인
+                </button>
+              </div>
+            </div>
+
+            <!-- 비밀번호 -->
+            <div class="field">
+              <label class="label" for="pw">비밀번호</label>
+              <input
+                id="pw"
+                name="password"
+                class="input"
+                type="password"
+                placeholder="영문, 숫자, 특수문자 포함 8~20자"
+                minlength="8"
+                maxlength="20"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+
+            <!-- 비밀번호 확인 -->
+            <div class="field">
+              <label class="label" for="pw2">비밀번호 재확인</label>
+              <input
+                id="pw2"
+                name="password_confirm"
+                class="input"
+                type="password"
+                placeholder="비밀번호를 다시 입력"
+                minlength="8"
+                maxlength="20"
+                required
+              />
+              <p id="pwMsg" class="hint error" aria-live="polite">
+                ※ 비밀번호와 동일해야 합니다.
+              </p>
+            </div>
+
+            <button class="submit-btn" type="submit" id="btnSubmit" disabled>
+              가입하기
+            </button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      // ----- 간단한 인터랙션(선택) -----
+      const agreeAll = document.getElementById("agreeAll");
+      const agreeForm = document.getElementById("agreeForm");
+      const requiredChecks = [
+        ...agreeForm.querySelectorAll("input[data-required]"),
+      ];
+      const pw = document.getElementById("pw");
+      const pw2 = document.getElementById("pw2");
+      const pwMsg = document.getElementById("pwMsg");
+      const submitBtn = document.getElementById("btnSubmit");
+      const signupForm = document.getElementById("signupForm");
+
+      // 전체 동의 토글
+      agreeAll.addEventListener("change", () => {
+        agreeForm
+          .querySelectorAll('input[type="checkbox"]')
+          .forEach((c) => (c.checked = agreeAll.checked));
+        validateForm();
+      });
+      // 개별 체크 시 전체 체크 상태 동기화
+      agreeForm.addEventListener("change", (e) => {
+        if (e.target === agreeAll) return;
+        const all = [
+          ...agreeForm.querySelectorAll(
+            'input[type="checkbox"]:not(#agreeAll)'
+          ),
+        ];
+        agreeAll.checked = all.every((c) => c.checked);
+        validateForm();
+      });
+
+      function passwordsOk() {
+        const ok = pw.value.length >= 8 && pw.value === pw2.value;
+        pwMsg.style.visibility = ok ? "hidden" : "visible";
+        return ok;
+      }
+      pw.addEventListener("input", passwordsOk);
+      pw2.addEventListener("input", passwordsOk);
+
+      function validateForm() {
+        const reqOk = requiredChecks.every((c) => c.checked);
+        const passOk = passwordsOk();
+        submitBtn.disabled = !(reqOk && passOk && signupForm.checkValidity());
+      }
+      signupForm.addEventListener("input", validateForm);
+
+      // 데모용 중복확인 버튼
+      document.getElementById("btnCheckId").addEventListener("click", () => {
+        alert("아이디 중복확인 API와 연동하세요.");
+      });
+      document.getElementById("btnCheckNick").addEventListener("click", () => {
+        alert("닉네임 중복확인 API와 연동하세요.");
+      });
+
+      // 제출(백엔드 연결 전에는 기본 동작 막기)
+      signupForm.addEventListener("submit", (e) => {
+        if (submitBtn.disabled) {
+          e.preventDefault();
+          return;
+        }
+        // 실제로는 fetch('/signup', {method:'POST', body: new FormData(signupForm)}) 등으로 처리
+      });
+
+      // 초기 상태
+      pwMsg.style.visibility = "hidden";
+      validateForm();
+    </script>
+  </body>
+</html>
