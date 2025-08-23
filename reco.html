@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>추천</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="reco.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="추천.css">
+    <link rel="stylesheet" href="local_reco.css">
+    <link rel="stylesheet" href="shorts.css">
+
+  </head>
+
+  <body id="setting">
+
+    <header class="location-top">
+      
+      <nav class="wrap nav">
+
+          <a class="logo" href="/home.html">로고</a>
+
+          <!-- 메뉴 리스트 -->
+            <ul class="menu"> 
+      <li><a href="/home.html" >홈</a></li>
+      <li><a href="/reco.html" aria-current="page">추천</a></li>
+      <li><a href="/논재.html">문화생활</a></li>
+      <li><a href="/community.html">소통</a></li>
+      <li><a href="/notice.html">공지사항</a></li>
+      <li><a href="/mypage.html">내정보</a></li>
+
+    </ul>
+    <!-- 로그인/회원가입 버튼 -->
+    <div class="auth">
+    
+  <a class="btn" href="/login.html">로그인</a>
+  <a class="btn" href="/sign_up.html">회원가입</a>
+    </div>
+    
+  </nav>
+</header>
+
+<div class="searchline">
+  <!-- 지역 -->
+  <select class="region-select" 
+  style="background: #30353b; color: #fff; border: 1px solid #333;">
+    <option value="지역">지역 ▾ </option>
+    <option value="서울">서울</option>
+    <option value="경기">경기</option>
+    <option value="인천">인천</option>
+    <option value="대전">대전</option>
+    <option value="대구">대구</option>
+    <option value="부산">부산</option>
+    <option value="광주">광주</option>
+    <option value="울산">울산</option>
+  </select>
+
+  <!-- 카테고리 + 검색어(둥근 테두리 하나로 묶음) -->
+  <div class="searchbox">
+    <select class="category-select">
+      <option value="전체">문화생활 ▾ </option>
+      <option value="미술관">미술관</option>
+      <option value="박물관">박물관</option>
+      <option value="공연">공연</option>
+      <option value="영화">영화</option>
+      <option value="전시">전시</option>
+      <option value="축제">축제</option>
+      <option value="기타">기타</option>
+    </select>
+    <input id="search" type="text" placeholder="검색어를 입력하세요" />
+  </div>
+
+  <!-- 전송 -->
+  <button id="search-button" class="go" aria-label="검색">➔</button>
+</div>
+
+
+
+    <div class="recent_info">
+
+      <div class="introduction"> 
+        <img src="/logo2.png" />
+    <div>문화 생활을 위해! <br>
+      잘 맞는 문화 생활을<br> 딱 맞게 추천드립니다!</div>
+    </div>
+
+
+    <div class="card" id="bus_card">
+      <span class="box">공지</span>
+      <a href="버스공지사항.html">자세히보기 ▸</a>
+      <img src="/bus.png" alt="버스"/>
+
+      <div class="context">먼 거리, 걷기 힘드시죠?
+        <br> 편하게 가는 버스 노선 보기</div>
+    </div>
+
+
+
+      <div class="card" id="chatbot_card">
+  <span class="box">공지</span>
+      <a href="챗봇연결.html">자세히보기 ▸</a>
+      <img src="/head.png"  alt="헤드셋"/>
+
+      <div class="context">사용방법이 어려우신가요?
+        <br> 챗봇 연결하기 </div>
+      </div>
+
+      <div class="card" id="money_card">
+          <span class="box">공지</span>
+      <a href="공지사항".html">자세히보기 ▸</a>
+      <img src="/money.png" alt="돈정보"/>
+
+      <div class="context">민생회복 소비쿠폰
+        <br> 사용 해보세요!</div>
+      </div>
+
+    </div>
+
+    <div class="personal_reco">
+      
+      <section class="section">
+      <div class="section-head">
+        <h2>__님 이런 문화 행사는 어때요?</h2>
+      </div>
+
+      <div class="grid">
+        <!-- 큰 카드 -->
+        <article class="card0 card--large">
+          <img src="ex.png" alt="대구 간송 미술관 전시" />
+          <div class="overlay"></div>
+          <button class="heart" aria-label="찜하기">❤</button>
+          <div class="content">
+            <div class="meta">주최 · The Flow</div>
+            <h3 class="title">대구 간송 미술관 전시</h3>
+            <p class="meta">
+              전통회화부터 다양한 소장품을 만날 수 있는 전시를 소개합니다.<br />예매
+              시 특별할인 20% 적용!
+            </p>
+            <button class="btn">구경</button>
+          </div>
+        </article>
+
+        <!-- 작은 카드 1 -->
+        <article class="card1 card--small">
+          <img src="ex.png" alt="대구 간송 미술관 전시" />
+          <div class="overlay"></div>
+          <button class="heart" aria-label="찜하기">❤</button>
+          <div class="content">
+            <h4 class="title">대구 간송 미술관 전시</h4>
+          </div>
+        </article>
+
+        <!-- 작은 카드 2 -->
+        <article class="card1 card--small">
+          <img src="ex.png" alt="대구 간송 미술관 전시" />
+          <div class="overlay"></div>
+          <button class="heart" aria-label="찜하기">❤</button>
+          <div class="content">
+            <h4 class="title">대구 간송 미술관 전시</h4>
+          </div>
+        </article>
+
+        <!-- 작은 카드 3 -->
+        <article class="card1 card--small">
+          <img src="ex.png" alt="대구 간송 미술관 전시" />
+          <div class="overlay"></div>
+          <button class="heart" aria-label="찜하기">❤</button>
+          <div class="content">
+            <h4 class="title">대구 간송 미술관 전시</h4>
+          </div>
+        </article>
+      </div>
+
+    </section>
+    </div>
+
+    <div class="local_reco">
+<h2>내 주변 문화생활</h2>
+      
+      <div class="local-grid">
+        <!---이미지 6장 -->
+      
+        <article class="event-card">
+          <img src="ex.png" alt="대구 간송 미술관 전시"/>
+          <div class="event-title">대구 간송 미술관 전시</div>
+        </article>
+        <article class="event-card">
+          <img src="ex.png" alt="대구 간송 미술관 전시"/>
+          <div class="event-title">대구 간송 미술관 전시</div>
+        </article>
+        <article class="event-card">
+          <img src="ex.png" alt="대구 간송 미술관 전시"/>
+          <div class="event-title">대구 간송 미술관 전시</div>
+        </article>
+        <article class="event-card">
+          <img src="ex.png" alt="대구 간송 미술관 전시"/>
+          <div class="event-title">대구 간송 미술관 전시</div>
+        </article>
+        <article class="event-card">
+          <img src="ex.png" alt="대구 간송 미술관 전시"/>
+          <div class="event-title">대구 간송 미술관 전시</div>
+        </article>
+        <article class="event-card">
+          <img src="ex.png" alt="대구 간송 미술관 전시"/>
+          <div class="event-title">대구 간송 미술관 전시</div>
+        </article>
+    </div>
+
+    <div class="shorts">
+      <h2>인기문화생활 쇼츠</h2>
+
+      <div class="shorts-row">
+        <!-- 1 -->
+        <div class="short">
+          <iframe
+            src="https://www.youtube.com/embed/TV9Q72aOiZc?mute=1&playsinline=1"
+            title="YouTube Shorts 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+
+        <!-- 2: 다른 쇼츠 ID로 교체 -->
+        <div class="short">
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID_2?mute=1&playsinline=1"
+            title="YouTube Shorts 2"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+
+        <!-- 3: 다른 쇼츠 ID로 교체 -->
+        <div class="short">
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID_3?mute=1&playsinline=1"
+            title="YouTube Shorts 3"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          >
+    </div>
+    </div>
+
+
+
+      
+
+
+</body>
+</html>
