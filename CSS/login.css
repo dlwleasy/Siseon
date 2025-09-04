@@ -1,0 +1,185 @@
+:root {
+  --ink: #1b1b1b;
+  --muted: #8b8f98;
+  --line: #e7e8ec;
+  --focus: #cfe2ff;
+  --cta1: #ffbd31; /* 버튼 상단 */
+  --cta2: #ffbd31; /* 버튼 하단 */
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: var(--ink);
+  background: #fff;
+}
+
+.login-page {
+  max-width: 420px;
+  margin: 24px auto 40px;
+  padding: 0 24px 36px;
+  position: relative;
+}
+
+/* 닫기 버튼(우상단) */
+.close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  color: #616161;
+  line-height: 1;
+}
+
+/* 제목 */
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 18px 0 18px;
+  letter-spacing: -0.01em;
+}
+
+/* 폼 */
+.login-form {
+  display: grid;
+  gap: 14px;
+}
+
+/* 접근성 레이블 숨김 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* pill 인풋 */
+.input {
+  width: 100%;
+  height: 54px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0 18px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.input::placeholder {
+  color: #b3b7bf;
+}
+.input:focus {
+  border-color: #bfd3ff;
+  box-shadow: 0 0 0 4px var(--focus);
+}
+
+/* 자동 로그인 체크 */
+.remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+  margin-top: 4px;
+  user-select: none;
+}
+.remember input {
+  width: 16px;
+  height: 16px;
+  accent-color: #f5c36a;
+}
+
+/* CTA 버튼 */
+.primary {
+  margin-top: 2px;
+  height: 52px;
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(180deg, var(--cta1), var(--cta2));
+  color: #111;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 18px rgba(245, 166, 35, 0.35);
+}
+.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.primary:hover {
+  filter: brightness(0.98);
+}
+
+/* 구분선 + 라벨 */
+.divider {
+  position: relative;
+  text-align: center;
+  color: #848995;
+  font-size: 12px;
+  margin: 22px 0 10px;
+}
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px solid #ededf1;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.divider {
+  background: #fff;
+  display: inline-block;
+  padding: 0 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+}
+
+/* 소셜 로그인 */
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+.social-list img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* 작은 화면 여백 */
+@media (max-width: 380px) {
+  .login-page {
+    padding: 0 16px 28px;
+  }
+  .social-list img {
+    width: 108px;
+    height: 108px;
+  }
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>문화생활 · 모임</title>
+
+    <!-- 전역/기초 -->
+    <link rel="stylesheet" href="CSS/global.css" />
+
+    <!-- 팀원 스타일 유지: 네비/검색 -->
+    <link rel="stylesheet" href="./styles/nav.css" />
+    <link rel="stylesheet" href="./styles/search.css" />
+
+    <!-- 본문 전용 -->
+    <link rel="stylesheet" href="./styles/sections.css" />
+  </head>
+  <body>
+    <!-- 상단 네비(얇은 라인 + sticky) -->
+    <header class="location-top">
+      <nav class="wrap nav">
+        <a class="logo" href="/home.html">로고</a>
+
+        <ul class="menu">
+          <li><a href="/home.html">홈</a></li>
+          <li><a href="/reco.html">추천</a></li>
+          <li><a href="/culture.html" aria-current="page">문화생활</a></li>
+          <li><a href="/community.html">소통</a></li>
+          <li><a href="/notice.html">공지사항</a></li>
+          <li><a href="/mypage.html">내정보</a></li>
+        </ul>
+
+        <div class="auth">
+          <a class="btn" href="/login.html">로그인</a>
+          <a class="btn" href="/signup.html">회원가입</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 검색 -->
+    <div class="wrap">
+      <div class="searchline">
+        <!-- 지역: 검정 pill -->
+        <select class="region-select" aria-label="지역">
+          <option value="지역">지역</option>
+          <option value="서울">서울</option>
+          <option value="경기">경기</option>
+          <option value="인천">인천</option>
+          <option value="대전">대전</option>
+          <option value="대구">대구</option>
+          <option value="부산">부산</option>
+          <option value="광주">광주</option>
+          <option value="울산">울산</option>
+        </select>
+
+        <!-- 카테고리 + 입력 -->
+        <div class="searchbox">
+          <select class="category-select" aria-label="카테고리">
+            <option value="전체">문화생활</option>
+            <option value="미술관">미술관</option>
+            <option value="박물관">박물관</option>
+            <option value="공연">공연</option>
+            <option value="영화">영화</option>
+            <option value="전시">전시</option>
+            <option value="축제">축제</option>
+            <option value="기타">기타</option>
+          </select>
+          <input id="search" type="text" placeholder="검색어를 입력하세요" />
+        </div>
+
+        <!-- go 버튼 -->
+        <button id="search-button" class="go" aria-label="검색">➔</button>
+      </div>
+    </div>
+
+    <main class="wrap">
+      <!-- 관심사: 기본 회색, 클릭 시 노란색 -->
+      <section class="section">
+        <div class="interest-grid" aria-label="관심사 선택">
+          <!-- 1줄 -->
+          <button class="interest">
+            <img src="./assets/icon-museum.svg" alt="" /><span>박물관</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-book.svg" alt="" /><span>독서</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-festival.svg" alt="" /><span>신나는</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-fitness.svg" alt="" /><span>운동</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-gallery.svg" alt="" /><span>미술관</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-movie.svg" alt="" /><span>영화</span>
+          </button>
+          <!-- 2줄 -->
+          <button class="interest">
+            <img src="./assets/icon-museum.svg" alt="" /><span>박물관</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-book.svg" alt="" /><span>독서</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-festival.svg" alt="" /><span>신나는</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-fitness.svg" alt="" /><span>운동</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-gallery.svg" alt="" /><span>미술관</span>
+          </button>
+          <button class="interest">
+            <img src="./assets/icon-movie.svg" alt="" /><span>영화</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 내 주변 문화생활: 제목 제거, 카드 타이틀은 이미지 안쪽 -->
+      <section class="section">
+        <div class="grid">
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+          <article class="event-card">
+            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <div class="event-title">대구 간송 미술관 전시</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 인기 모임: 제목 굵고 크게, 2 x 2 -->
+      <section class="section">
+        <h2 class="section-title">인기 모임</h2>
+        <div class="popular">
+          <article class="pop-card">
+            <div class="pop-title">강원도 기차 여행 모임</div>
+            <div class="muted">
+              강원도 기차 여행으로 함께 여행<br />창문으로 바다 보면서 여행할 수
+              있어요
+            </div>
+          </article>
+          <article class="pop-card">
+            <div class="pop-title">강원도 기차 여행 모임</div>
+            <div class="muted">
+              강원도 기차 여행으로 함께 여행<br />창문으로 바다 보면서 여행할 수
+              있어요
+            </div>
+          </article>
+          <article class="pop-card">
+            <div class="pop-title">강원도 기차 여행 모임</div>
+            <div class="muted">
+              강원도 기차 여행으로 함께 여행<br />창문으로 바다 보면서 여행할 수
+              있어요
+            </div>
+          </article>
+          <article class="pop-card">
+            <div class="pop-title">강원도 기차 여행 모임</div>
+            <div class="muted">
+              강원도 기차 여행으로 함께 여행<br />창문으로 바다 보면서 여행할 수
+              있어요
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <h3>마음에 드는 모임이 없나요?</h3>
+        <p class="muted">나에게 알맞는 매칭 하기를 눌러보세요!</p>
+        <a href="#" class="btn cta-btn">매칭 하기</a>
+      </section>
+    </main>
+
+    <!-- 클릭 시 노란색 토글 -->
+    <script>
+      document.querySelectorAll(".interest").forEach((btn) => {
+        btn.addEventListener("click", () =>
+          btn.classList.toggle("is-selected")
+        );
+      });
+    </script>
+  </body>
+</html>
