@@ -1,0 +1,106 @@
+/* 관심사 */
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+.interest {
+  background: var(--chip);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 22px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.05s;
+}
+.interest:hover {
+  transform: translateY(-1px);
+}
+.interest img {
+  width: 44px;
+  height: 44px;
+}
+.interest span {
+  font-weight: 700;
+}
+.interest.is-selected {
+  background: var(--accent);
+  border-color: var(--accent-line);
+}
+
+/* 카드 그리드 (3 x 2) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.event-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+.event-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.event-card::after {
+  /* 하단 그라데이션 */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+.event-title {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 1;
+  color: #fff;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+/* 인기 모임 (2 x 2) */
+.popular {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+.pop-card {
+  background: #f3f4f6;
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+.pop-title {
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  margin: 60px 0 80px;
+}
+.cta .btn.cta-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: #fff7cc;
+  color: #111;
+  font-weight: 800;
+  border: 1px solid #fde68a;
+}

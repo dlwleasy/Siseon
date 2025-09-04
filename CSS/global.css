@@ -1,0 +1,26 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+:root {
+  --bg: #ffffff; /* 전체 배경 흰색 */
+  --ink: #111114; /* 본문 텍스트 */
+  --muted: #6b7280; /* 보조 텍스트 */
+  --line: #eceef2; /* 테두리/구분선 */
+  --chip: #f5f5f5; /* 관심사 기본 타일 배경 */
+  --accent: #fde68a; /* 관심사 선택 배경(연노랑) */
+  --accent-line: #facc15; /* 관심사 선택 테두리(진노랑) */
+}
+
+/* 페이지 폭 */
+
+/* 공통 간격/텍스트 */
+.section {
+  margin: 36px 0;
+}
+.section-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.muted {
+  color: var(--muted);
+}

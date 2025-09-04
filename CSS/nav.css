@@ -1,3 +1,12 @@
+body {
+  font-family: Pretendard, Arial, sans-serif;
+}
+
+#setting {
+  margin-left: 285px;
+  margin-right: 285px;
+}
+
 :root {
   --card: #fff;
   --ink: #111114;

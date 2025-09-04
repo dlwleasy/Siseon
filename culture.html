@@ -4,22 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>문화생활 · 모임</title>
-
-    <!-- 전역/기초 -->
     <link rel="stylesheet" href="CSS/global.css" />
-
-    <!-- 팀원 스타일 유지: 네비/검색 -->
-    <link rel="stylesheet" href="./styles/nav.css" />
-    <link rel="stylesheet" href="./styles/search.css" />
-
-    <!-- 본문 전용 -->
-    <link rel="stylesheet" href="./styles/sections.css" />
+    <link rel="stylesheet" href="CSS/nav.css" />
+    <link rel="stylesheet" href="CSS/search.css" />
+    <link rel="stylesheet" href="CSS/sections.css" />
   </head>
-  <body>
+
+  <body id="setting">
     <!-- 상단 네비(얇은 라인 + sticky) -->
     <header class="location-top">
       <nav class="wrap nav">
-        <a class="logo" href="/home.html">로고</a>
+        <a href="/home.html">로고</a>
 
         <ul class="menu">
           <li><a href="/home.html">홈</a></li>
@@ -29,7 +24,7 @@
           <li><a href="/notice.html">공지사항</a></li>
           <li><a href="/mypage.html">내정보</a></li>
         </ul>
-
+        <!-- 로그인/회원가입 버튼 -->
         <div class="auth">
           <a class="btn" href="/login.html">로그인</a>
           <a class="btn" href="/signup.html">회원가입</a>
@@ -38,39 +33,40 @@
     </header>
 
     <!-- 검색 -->
-    <div class="wrap">
-      <div class="searchline">
-        <!-- 지역: 검정 pill -->
-        <select class="region-select" aria-label="지역">
-          <option value="지역">지역</option>
-          <option value="서울">서울</option>
-          <option value="경기">경기</option>
-          <option value="인천">인천</option>
-          <option value="대전">대전</option>
-          <option value="대구">대구</option>
-          <option value="부산">부산</option>
-          <option value="광주">광주</option>
-          <option value="울산">울산</option>
+    <div class="searchline">
+      <!-- 지역 -->
+      <select
+        class="region-select"
+        style="background: #30353b; color: #fff; border: 1px solid #333"
+      >
+        <option value="지역">지역 ▾</option>
+        <option value="서울">서울</option>
+        <option value="경기">경기</option>
+        <option value="인천">인천</option>
+        <option value="대전">대전</option>
+        <option value="대구">대구</option>
+        <option value="부산">부산</option>
+        <option value="광주">광주</option>
+        <option value="울산">울산</option>
+      </select>
+
+      <!-- 카테고리 + 검색어(둥근 테두리 하나로 묶음) -->
+      <div class="searchbox">
+        <select class="category-select">
+          <option value="전체">문화생활 ▾</option>
+          <option value="미술관">미술관</option>
+          <option value="박물관">박물관</option>
+          <option value="공연">공연</option>
+          <option value="영화">영화</option>
+          <option value="전시">전시</option>
+          <option value="축제">축제</option>
+          <option value="기타">기타</option>
         </select>
-
-        <!-- 카테고리 + 입력 -->
-        <div class="searchbox">
-          <select class="category-select" aria-label="카테고리">
-            <option value="전체">문화생활</option>
-            <option value="미술관">미술관</option>
-            <option value="박물관">박물관</option>
-            <option value="공연">공연</option>
-            <option value="영화">영화</option>
-            <option value="전시">전시</option>
-            <option value="축제">축제</option>
-            <option value="기타">기타</option>
-          </select>
-          <input id="search" type="text" placeholder="검색어를 입력하세요" />
-        </div>
-
-        <!-- go 버튼 -->
-        <button id="search-button" class="go" aria-label="검색">➔</button>
+        <input id="search" type="text" placeholder="검색어를 입력하세요" />
       </div>
+
+      <!-- 전송 -->
+      <button id="search-button" class="go" aria-label="검색">➔</button>
     </div>
 
     <main class="wrap">
@@ -79,41 +75,41 @@
         <div class="interest-grid" aria-label="관심사 선택">
           <!-- 1줄 -->
           <button class="interest">
-            <img src="./assets/icon-museum.svg" alt="" /><span>박물관</span>
+            <img src="img/icon-museum.svg" alt="" /><span>박물관</span>
           </button>
           <button class="interest">
-            <img src="./assets/icon-book.svg" alt="" /><span>독서</span>
+            <img src="img/icon-book.svg" alt="" /><span>독서</span>
           </button>
           <button class="interest">
-            <img src="./assets/icon-festival.svg" alt="" /><span>신나는</span>
+            <img src="img/icon-festival.svg" alt="" /><span>신나는</span>
           </button>
           <button class="interest">
-            <img src="./assets/icon-fitness.svg" alt="" /><span>운동</span>
+            <img src="img/icon-fitness.svg" alt="" /><span>운동</span>
           </button>
           <button class="interest">
-            <img src="./assets/icon-gallery.svg" alt="" /><span>미술관</span>
+            <img src="img/icon-gallery.svg" alt="" /><span>미술관</span>
           </button>
           <button class="interest">
-            <img src="./assets/icon-movie.svg" alt="" /><span>영화</span>
+            <img src="img/icon-movie.svg" alt="" /><span>영화</span>
           </button>
           <!-- 2줄 -->
           <button class="interest">
-            <img src="./assets/icon-museum.svg" alt="" /><span>박물관</span>
+            <img src="img/icon-museum.svg" alt="" /><span>박물관</span>
           </button>
           <button class="interest">
-            <img src="./assets/icon-book.svg" alt="" /><span>독서</span>
+            <img src="img/icon-book.svg" alt="" /><span>독서</span>
           </button>
           <button class="interest">
-            <img src="./assets/icon-festival.svg" alt="" /><span>신나는</span>
+            <img src="img/icon-festival.svg" alt="" /><span>신나는</span>
           </button>
           <button class="interest">
-            <img src="./assets/icon-fitness.svg" alt="" /><span>운동</span>
+            <img src="img/icon-fitness.svg" alt="" /><span>운동</span>
           </button>
           <button class="interest">
-            <img src="./assets/icon-gallery.svg" alt="" /><span>미술관</span>
+            <img src="img/icon-gallery.svg" alt="" /><span>미술관</span>
           </button>
           <button class="interest">
-            <img src="./assets/icon-movie.svg" alt="" /><span>영화</span>
+            <img src="img/icon-movie.svg" alt="" /><span>영화</span>
           </button>
         </div>
       </section>
@@ -122,27 +118,27 @@
       <section class="section">
         <div class="grid">
           <article class="event-card">
-            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <img src="img//event-museum.png" alt="대구 간송 미술관 전시" />
             <div class="event-title">대구 간송 미술관 전시</div>
           </article>
           <article class="event-card">
-            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <img src="img/event-museum.png" alt="대구 간송 미술관 전시" />
             <div class="event-title">대구 간송 미술관 전시</div>
           </article>
           <article class="event-card">
-            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <img src="img/event-museum.png" alt="대구 간송 미술관 전시" />
             <div class="event-title">대구 간송 미술관 전시</div>
           </article>
           <article class="event-card">
-            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <img src="img/event-museum.png" alt="대구 간송 미술관 전시" />
             <div class="event-title">대구 간송 미술관 전시</div>
           </article>
           <article class="event-card">
-            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <img src="img/event-museum.png" alt="대구 간송 미술관 전시" />
             <div class="event-title">대구 간송 미술관 전시</div>
           </article>
           <article class="event-card">
-            <img src="./assets/event-museum.png" alt="대구 간송 미술관 전시" />
+            <img src="img/event-museum.png" alt="대구 간송 미술관 전시" />
             <div class="event-title">대구 간송 미술관 전시</div>
           </article>
         </div>
